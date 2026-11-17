@@ -11,14 +11,27 @@
   <body>
     <header>
       <h1>incidents</h1>
-      <p class="sub">sched-prod · tonight · newest first</p>
+      <p class="sub">sched-prod · tonight · newest first · pick a row to open it, ack it there</p>
     </header>
-    <main data-testid="board" aria-busy="true">
-      <p data-testid="loader" class="loader" role="status">Loading tonight's incidents…</p>
-      <p class="status" role="alert" hidden></p>
-      <p data-testid="empty" class="empty" hidden>No incidents tonight.</p>
-      <ul data-testid="incident-list" class="list" hidden></ul>
-    </main>
+    <div class="layout">
+      <main data-testid="board" aria-busy="true">
+        <p data-testid="loader" class="loader" role="status">Loading tonight's incidents…</p>
+        <p class="status" role="alert" hidden></p>
+        <p data-testid="empty" class="empty" hidden>No incidents tonight.</p>
+        <ul data-testid="incident-list" class="list" hidden></ul>
+      </main>
+      <aside data-testid="incident-panel" class="panel" aria-live="polite" hidden>
+        <h2 class="panel-id"></h2>
+        <p class="panel-what"></p>
+        <dl>
+          <dt>severity</dt><dd class="panel-sev"></dd>
+          <dt>opened</dt><dd><time class="panel-time"></time></dd>
+          <dt>state</dt><dd class="panel-state"></dd>
+        </dl>
+        <button type="button" data-testid="panel-ack" class="panel-ack">Ack</button>
+        <button type="button" class="panel-close">Close</button>
+      </aside>
+    </div>
     <footer>sched-prod incident board · build <span data-testid="build-sha">__BUILD_SHA__</span></footer>
   </body>
 </html>

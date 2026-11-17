@@ -16,3 +16,17 @@ footer { color: #777; font-size: 13px; }
 .loader, .empty, .status { max-width: 960px; padding: 12px; color: #555; }
 .status { color: #b00020; }
 footer [data-testid="build-sha"] { font-family: ui-monospace, monospace; }
+.layout { display: grid; grid-template-columns: minmax(0, 960px) 300px; gap: 16px; align-items: start; }
+.row { cursor: pointer; }
+.row:hover, .row:focus { background: #f2f6ff; outline: none; }
+.row.selected { background: #e6eeff; box-shadow: inset 3px 0 0 #2457d6; }
+.row .state { color: #777; }
+.panel { position: sticky; top: 12px; margin-top: 12px; padding: 16px; border: 1px solid #d0d7e6; border-radius: 8px; background: #fff; }
+.panel h2 { margin: 0 0 6px; font: 600 18px ui-monospace, monospace; }
+.panel dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 12px 0; }
+.panel dt { color: #777; }
+.panel dd { margin: 0; }
+.panel button { font: inherit; padding: 6px 14px; border-radius: 6px; border: 1px solid #1d1d1f; background: #fff; cursor: pointer; margin-right: 8px; }
+.panel .panel-ack { background: #1d1d1f; color: #fff; }
+.panel .panel-ack:disabled { background: #0a7a2f; border-color: #0a7a2f; cursor: default; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
